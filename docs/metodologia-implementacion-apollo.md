@@ -91,7 +91,7 @@ Esta etapa define cuántas empresas necesita el TAM y cuántas deben validarse e
 |---|---|---|---|
 | D1 | Negocios cerrados esperados en el periodo | 20 en 12 meses | Obligatorio. Sin esto no hay cálculo |
 | D2 | Tasa de cierre real (ganados ÷ oportunidades, últimos 12 meses) | 25% | Usar histórico de 6 meses; si no hay, calibrar con piloto |
-| D3 | Tasa de conversión de cuenta contactada a oportunidad | 4% | Calibrar con piloto de 50–100 cuentas (referencia Apollo) |
+| D3 | Tasa de conversión de cuenta contactada a oportunidad | Se determina en la sesión con el cliente | Histórico del cliente o calibración en la sesión. Apollo no publica esta cifra |
 | D4 | Empresas que ya están en CRM por segmento | 1,200 | Opcional |
 
 ### 4.2 Fórmulas
@@ -129,7 +129,7 @@ n  = n₀ ÷ (1 + (n₀ − 1) ÷ N)      N = Empresas TAM (corrección para pob
 | 25,000 | 379 |
 | 50,000 | 382 |
 
-**Regla de mínimo:** si la muestra calculada supera el 20% del TAM, o si el TAM es menor a 500 empresas, el copiloto marca que la validación debe ser completa, no muestral.
+**Sin tope de tamaño.** El tamaño del TAM sale del cálculo de 4.2 y de la definición de segmentos. No se fija un máximo ni un mínimo arbitrario. Las referencias de Apollo para TAM están en la sección 4.5.
 
 ### 4.3 Ejemplo ilustrativo (no es dato de cliente)
 
@@ -138,7 +138,22 @@ n  = n₀ ÷ (1 + (n₀ − 1) ÷ N)      N = Empresas TAM (corrección para pob
 - Conversión cuenta → oportunidad: 4% → **2,000 empresas en TAM**
 - Muestra de validación: **323 empresas** (95% de confianza, ±5%)
 
-### 4.4 Gate E1
+### 4.4 Referencias de Apollo sobre tamaño de TAM
+
+| Referencia | Valor | Fuente |
+|---|---|---|
+| Pre-TAM (amplio, antes de calificar con IA) | 10–200K cuentas | Notas de facilitador, slide 6; infografía Pilar 1 |
+| TAM unificado cualificado por segmento | 10–50K cuentas | One-pager GTM; infografía Pilar 1; notas de facilitador, slide 6 |
+| Ejemplo de TAM por segmento | 50K pre-TAM → 10K cualificado | Notas de facilitador, demo |
+| Escenario bajo / alto de un paquete | 10K en un segmento / 200K en cinco segmentos con investigación agéntica | Service Packages, nota "How to read the ranges" |
+| Base de cuentas de Apollo | 35M+ | Infografía Pilar 1 |
+| Muestra de cuentas para estimar contactos por cuenta | 50–100 cuentas | Infografía Pilar 2 |
+
+**Lo que Apollo no define:** una fórmula ni un tamaño de muestra para validar el TAM. Su texto dice "validated on a sample, refreshed quarterly" sin cifra. La fórmula de 4.2 es metodología de Freelan, no de Apollo.
+
+**Límites de plan (no son reglas metodológicas):** las notas de facilitador dan capacidad de 50K de TAM en Pro, 500K en Enterprise y sin límite en Custom. Son topes de producto y no deben usarse como criterio de tamaño del TAM.
+
+### 4.5 Gate E1
 
 - D1 y D2 entregados y validados por el consultor
 - Empresas TAM calculadas y aprobadas por el cliente
@@ -281,7 +296,7 @@ Cada pilar tiene: preguntas al cliente, insights, entregables para el equipo té
 
 **Gate P6:** revisores asignados, cola operando y primer ciclo de feedback registrado.
 
-**Nota:** la revisión conjunta de cliente + Freelan (sección 6) aplica a los entregables de diseño. La revisión humana de este pilar la hace el equipo del cliente sobre las cuentas en operación.
+**Alcance acordado:** el cliente valida la calidad de las cuentas del **top 10%** (las que el triage manda a revisión humana). La revisión conjunta de cliente + Freelan (sección 6) aplica a los entregables de diseño.
 
 ### Pilar 7 — Reporting y optimización
 
@@ -340,9 +355,15 @@ Cada entregable se genera como documento aprobado con este encabezado:
 
 ---
 
-## 9. Puntos abiertos
+## 9. Decisiones y puntos abiertos
 
-1. **Conversión cuenta → oportunidad (D3):** sin histórico del cliente, no hay base de Apollo para este dato. Hay que calibrar con piloto o acordar un supuesto explícito.
-2. **Revisión de HITL:** confirmar si la revisión de cliente + Freelan se aplica solo a diseño (E3) o también a cuentas del top 10% en operación.
-3. **Duración de referencia:** las notas de facilitador dicen 9 semanas; el one-pager de GTM System Build dice 6–8. Se usa como máximo, pero conviene confirmar.
-4. **Tamaño mínimo de TAM para validación completa:** la regla de 20% y 500 empresas es propuesta del copiloto; confirmar.
+**Resueltos en esta versión**
+
+1. **Conversión cuenta → oportunidad (D3):** se determina en la sesión con el cliente. Apollo no publica esta cifra.
+2. **Alcance de la revisión humana:** el cliente valida la calidad de las cuentas del top 10% en el triage.
+3. **Tope de TAM:** se eliminó la regla de 500 empresas y la de 20% de muestra. No venían de Apollo.
+
+**Pendientes**
+
+1. **Duración de referencia:** las notas de facilitador dicen 9 semanas; el one-pager de GTM System Build dice 6–8. Se usa como máximo y conviene confirmarla.
+2. **Interpretación de "top 10%":** asumo top 10% de cuentas, no las 10 mejores. Confirmar.
