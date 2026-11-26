@@ -1,2 +1,2 @@
-.flowTop b:before{width:78px!important;height:24px!important}
+.flowTop b:before,.flowTop b:after{display:block!important;opacity:1!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}.flowTop b:before{width:78px!important;height:24px!important}.flowTop b:after{width:78px!important;height:24px!important}
 
