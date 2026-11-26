@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model OnboardingProject {
+  id          String   @id @default(cuid())
+  companyName String
+  hubspotId   String?  @unique
+  status      String   @default("discovery")
+  owner       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  pillars     PillarResponse[]
+  documents   GeneratedDocument[]
+}
+
+model PillarResponse {
+  id          String   @id @default(cuid())
+  projectId   String
+  pillar      Int
+  values      Json
+  approved    Boolean  @default(false)
+  approvedBy  String?
+  approvedAt  DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  project     OnboardingProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  @@unique([projectId, pillar])
+}
+
+model GeneratedDocument {
+  id        String   @id @default(cuid())
+  projectId String
+  pillar    Int
+  fileName  String
+  content   Bytes
+  createdAt DateTime @default(now())
+  project   OnboardingProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
